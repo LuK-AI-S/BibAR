@@ -49,3 +49,13 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: RueckgabeAuto
     m_Texture: {fileID: 2800000, guid: 027cef11467eaff48baaf57ef6c2b03f, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5130015917129019429
+      m_GuidHigh: 11518414793886324901
+    m_SerializedTextureGuid:
+      m_GuidLow: 12476319785707783788
+      m_GuidHigh: 17087195306728595290
+    m_Size: {x: 0.3, y: 0.22261308}
+    m_SpecifySize: 1
+    m_Name: Ausleihgeraet
+    m_Texture: {fileID: 0}

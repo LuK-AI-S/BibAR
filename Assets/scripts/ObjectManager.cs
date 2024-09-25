@@ -16,7 +16,7 @@ public class ObjectManager : MonoBehaviour
     private ARSession arSession;
 
     public Transform xrOrigin;
-    public Camera camera;
+    public Camera camInScene;
     public GameObject User;
     private Quaternion initialRotation;
     private Vector3 initialPosition;
@@ -110,7 +110,7 @@ Die ARSession wird komplett beendet und neu erstellt wodurch sie die "Scene" mit
     void Recenter()
     {
         // Get the current local rotation of the AR Camera
-        Quaternion cameraLocalRotation = camera.transform.localRotation;
+        Quaternion cameraLocalRotation = camInScene.transform.localRotation;
 
         // Extract the Y-axis rotation
         Vector3 cameraEulerAngles = cameraLocalRotation.eulerAngles;
@@ -130,10 +130,10 @@ Die ARSession wird komplett beendet und neu erstellt wodurch sie die "Scene" mit
         // dosent work if plane-detaction is on
         // !!! 
         xrOrigin.transform.position = initialPosition;
-        xrOrigin.transform.localPosition = new Vector3 (camera.transform.position.x * -1,xrOrigin.transform.position.y,camera.transform.position.z * -1);
+        xrOrigin.transform.localPosition = new Vector3 (camInScene.transform.position.x * -1,xrOrigin.transform.position.y,camInScene.transform.position.z * -1);
 
         // Reset the local rotation of the AR Camera around the Y-axis
-        camera.transform.localRotation = Quaternion.Euler(cameraEulerAngles.x, 0, cameraEulerAngles.z);
+        camInScene.transform.localRotation = Quaternion.Euler(cameraEulerAngles.x, 0, cameraEulerAngles.z);
     }
 
     
